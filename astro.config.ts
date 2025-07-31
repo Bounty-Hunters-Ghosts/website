@@ -1,4 +1,5 @@
 // @ts-check
+import path from 'path';
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
@@ -64,5 +65,15 @@ export default defineConfig({
         },
       },
     },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+        '@public': path.resolve(__dirname, './public'),
+        '@assets': path.resolve(__dirname, './src/assets'),
+        '@css': path.resolve(__dirname, './src/styles'),
+        '@lib': path.resolve(__dirname, './src/scripts'),
+        '@comp': path.resolve(__dirname, './src/components'),
+      }
+    }
   },
 });

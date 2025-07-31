@@ -8,7 +8,16 @@
     "dist"
   ],
   "compilerOptions": {
+    "baseUrl": ".",
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
+    "paths": {
+      "@/*": ["src/*"],
+      "@public/*": ["public/*"],
+      "@assets/*": ["src/assets/*"],
+      "@css/*": ["src/styles/*"],
+      "@lib/*": ["src/scripts/*"],
+      "@comp/*": ["src/components/*"]
+    }
   }
 }

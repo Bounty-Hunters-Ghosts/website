@@ -3,10 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "NODE_ENV=development bun run server.ts",
+    "build": "bunx --bun astro check && astro build",
+    "preview": "bunx --bun astro preview",
+    "prod:start": "NODE_ENV=production bun run dist/server/server.js"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.1",
