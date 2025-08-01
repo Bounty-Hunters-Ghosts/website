@@ -69,6 +69,9 @@ export default defineConfig({
     },
     resolve: {
       alias: {
+        'react': 'preact/compat',
+        'react-dom': 'preact/compat',
+
         '@': path.resolve(__dirname, './src'),
         '@public': path.resolve(__dirname, './public'),
         '@assets': path.resolve(__dirname, './src/assets'),
