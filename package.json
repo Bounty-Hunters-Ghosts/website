@@ -20,7 +20,6 @@
     "cssnano": "^7.1.0",
     "dotenv": "^17.2.1",
     "lite-youtube-embed": "^0.3.3",
-    "motion": "^12.23.12",
     "preact": "^10.27.0",
     "sass-embedded": "^1.89.2",
     "tailwindcss": "^4.1.11"
