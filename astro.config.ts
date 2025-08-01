@@ -6,6 +6,8 @@ import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import bun from "@nurodev/astro-bun";
 
+const __dirname = path.resolve();
+
 // https://astro.build/config
 export default defineConfig({
   adapter: bun(), 
