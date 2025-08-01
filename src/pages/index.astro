@@ -2,8 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 // TODO: Randomize these
-import IMG_Intro_Background_0 from '@assets/images/home/back-0.png';
-import IMG_Intro_Background_1 from '@assets/images/home/back-1.png';
+import IMG_Intro_Background from '@assets/images/home/back.png';
 ---
 
 <Layout>
@@ -15,7 +14,7 @@ import IMG_Intro_Background_1 from '@assets/images/home/back-1.png';
   </div>
 </Layout>
 
-<style lang="scss" define:vars={{ bgUrl: `url(${IMG_Intro_Background_0.src})` }}>
+<style lang="scss" define:vars={{ bgUrl: `url(${IMG_Intro_Background.src})` }}>
   @use 'sass:color';
 
   @use '@css/variables' as *;
