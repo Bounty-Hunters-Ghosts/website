@@ -1,5 +1,8 @@
 ---
 import '@css/global.css';
+
+import Footer from '@comp/Footer.astro';
+import Navigator from '@comp/Navigator.astro';
 ---
 
 <!doctype html>
@@ -9,10 +12,12 @@ import '@css/global.css';
 	  <meta name="viewport" content="width=device-width" />
 	  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	  <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>BHxG</title>
   </head>
-  <body>
+  <body class="relative">
+    <Navigator />
     <slot />
+    <Footer />
   </body>
 </html>
 

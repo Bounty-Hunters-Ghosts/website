@@ -1,0 +1,115 @@
+@use 'sass:color';
+@use '@css/variables' as *;
+
+:root {
+  --grid-size: 48px;
+  --pulse-size: 24px;
+  --pulse-thickness: 1px;
+}
+
+.grid-background {
+  position: fixed;
+  top: 0px; left: 0px; right: 0px; bottom: 0px;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(to right, color.scale($blue, $lightness: -90%) 1px, transparent 1px),
+    linear-gradient(to bottom, color.scale($blue, $lightness: -90%) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  background-position: calc(var(--grid-size) / 2) calc(var(--grid-size) / 2);
+}
+
+.pulse {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  border-radius: 10px;
+  mix-blend-mode: screen;
+}
+
+.pulse.horizontal {
+  height: var(--pulse-thickness);
+  width: var(--pulse-size);
+  top: 0;
+  left: 0;
+}
+
+.pulse.vertical {
+  width: var(--pulse-thickness);
+  height: var(--pulse-size);
+  top: 0;
+  left: 0;
+}
+
+@keyframes pulse-horizontal {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw - var(--pulse-size) - var(--grid-size)));
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-horizontal-reverse {
+  0% {
+    transform: translateX(calc(100vw - var(--pulse-size) - var(--grid-size)));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-vertical {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh - var(--pulse-size) - var(--grid-size)));
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-vertical-reverse {
+  0% {
+    transform: translateY(calc(100vh - var(--pulse-size) - var(--grid-size)));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}

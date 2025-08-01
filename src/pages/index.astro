@@ -1,36 +1,114 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AnimatedGrid from '@comp/preact/AnimatedGrid/AnimatedGrid';
 
 import IMG_Intro_Background from '@assets/images/home/back.png';
 ---
 
 <Layout>
-	<div id="intro" class="w-screen h-screen">
-    <h1>Bounty Hunters Ghosts</h1>
-  </div>
-  <div id="back" class="size-[4000px]">
-        
-  </div>
+  <div class="grid-background"></div> 
+  <AnimatedGrid client:only />
+  <main class="relative flex flex-1 flex-col">
+    <div id="intro" class="h-screen">
+      <div id="welcome" class="max-w-9/12">
+        <div>
+          <h1>Bounty Hunters Ghosts</h1>
+          <h2>We are whisper; legend is our legacy.</h2>
+        </div>
+        <div>
+          <h3>Join us, become one of the most respected and feared Ghosts in the verse, and build your legacy through legend of your many deeds.</h3>
+        </div>
+      </div>
+    </div>
+    <div id="content" class="pt-8 flex grow flex-col">
+      <div class="text-center backdrop-blur-sm">
+        <h1>What we do</h1>
+        <p>Being one of many Private Military Corporations within the verse, we of course aim to lead the way in clandestine operations, no matter how far nor how difficult or complex.</p>
+        <p>Due to the healthy PMC competivitness in the verse, there is no room for complacency and, therefore, we are always adapting to lead the way!</p>
+      </div>
+      <div class="text-center backdrop-blur-xs">
+        <h1>What we do for you</h1>
+        <p>Our services are ever improving and adapting! We are law abiding however.</p>
+        <ul>
+          <li>Clandestine Demolitions</li>
+          <li>Clandestine Exfiltrations</li>
+          <li>Clandestine Raids</li>
+        </ul>
+        <p>Organisation leadership may contact us for more specific/complex jobs which may not be listed here. Discussion of job specifics will be done in-verse within a secretive location.</p>
+      </div>
+      <div class="text-center backdrop-blur-xs">
+        <h1>Divisions</h1>
+
+      </div>
+      <div class="text-center backdrop-blur-xs">
+        <h1>Leadership</h1>
+
+      </div>
+      <div class="text-center backdrop-blur-xs">
+        <h1>Become one of us today!</h1>
+      </div>
+      <div class="text-center backdrop-blur-xs">
+        <h1>Our Partners</h1>
+      </div>
+    </div>
+  </main>
 </Layout>
 
 <style lang="scss" define:vars={{ bgUrl: `url(${IMG_Intro_Background.src})` }}>
   @use 'sass:color';
 
+  @use "tailwindcss";
   @use '@css/variables' as *;
   @use '@css/elements';
   
   #intro {
     background-image: var(--bgUrl);
     background-size: cover;
-    background-position: center;
-    mask-image: linear-gradient(180deg, black, black 80%, transparent);
+    background-position: right;
+    background-blend-mode: screen;
+    mask-image: linear-gradient(180deg, black, black 90%, transparent);
+
+    #welcome {
+      color: transparent;
+
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.75) 80%,
+        rgba(255, 255, 255, 1) 90%,
+        rgba(255, 255, 255, 0.75) 100%
+      );
+      background-clip: text;
+      background-size: 200% auto;
+      animation: shine 12s ease-in-out infinite;
+    }
   }
 
-  #back {
-    background-color: black;
-    background: 
-      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512"><filter id="noise" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="45435" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.075"/></feComponentTransfer></filter><rect width="100%" height="100%" filter="url(%23noise)" fill="transparent"/></svg>'),
-      repeat;
-    mask-image: linear-gradient(180deg, transparent, black 15%, black);
+  #content {
+    /*
+    .panel-idea {
+      background-color: rgba(0, 0, 0, 0.45);
+      border: solid 0.25px rgba(255, 255, 255, 0.45);
+      padding: 24px;
+      clip-path: polygon(0% 25px, 25px 2px, 50% 2px, 100% 0%, 100% calc(100% - 25px), calc(100% - 25px) calc(100% - 2px), 50% calc(100% - 2px), 0% 100%);
+    }
+    */
+
+    & > * {
+      background-color: rgba(0, 0, 0, 0.45);
+      padding: 24px;
+    }
+  }
+
+  // Animations
+  @keyframes shine {
+    0% {
+      background-position: 200% center;
+    }
+    10% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
   }
 </style>

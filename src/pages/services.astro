@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnimatedGrid from '@comp/preact/AnimatedGrid/AnimatedGrid';
+---
+
+<Layout>
+  <div class="grid-background"></div>
+  <AnimatedGrid client:only />
+</Layout>
