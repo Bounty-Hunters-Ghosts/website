@@ -24,56 +24,66 @@ import IMG_what_we_do_for_you from '@assets/images/home/what_we_do_for_you.png';
         </div>
       </div>
     </div>
-    <div id="content" class="pt-8 flex grow flex-col">
-      <div class="h-[500px] flex backdrop-blur-sm">
-        <div class="p-8">
-          <h1>What we do</h1>
-          <p>
-            In the vast expanse of the Verse, our presence is defined not by proclamation but by the quiet certainty of success. We are the shadow in the chaos, 
-            the unseen force that moves with precision and purpose across the stellar frontier. Specializing in undertaking missions that others would deem impossible, 
-            we navigate the fine line between order and anarchy with unwavering resolve.
-            <br/><br/>
-            From covert operations in the darkest reaches to rapid response in life-or-death scenarios, our commitment is absolute. Every assignment is met with meticulous planning, 
-            relentless execution, and a code of professionalism forged in the crucible of countless battles. Our operatives embody discipline, skill, and adaptability, 
-            ensuring that no barrier is insurmountable and no objective unreachable.
-            <br/><br/>
-            We exist to serve the few who demand unmatched excellence—resolute, efficient, and formidable—yet we remain humble in our duty, 
-            knowing that true strength lies in the mission, not the accolades. When the stakes are highest and the odds are against you, 
-            we are the force that stands ready, undeterred and unbroken, quietly shaping the balance of power within the Verse.
-          </p>
+    <div id="content" class="pt-8 flex grow flex-col backdrop-blur-xs">
+      <div class="h-[500px] mt-4 mb-4 flex">
+        <div class="p-8 overflow-hidden">
+          <h1 class="border-b-[1px] border-t-white mb-4">What we do</h1>
+          <div class="h-full overflow-y-auto">
+            <p>
+              In the vast expanse of the Verse, our presence is defined not by proclamation but by the quiet certainty of success. We are the shadow in the chaos, 
+              the unseen force that moves with precision and purpose across the stellar frontier. Specializing in undertaking missions that others would deem impossible, 
+              we navigate the fine line between order and anarchy with unwavering resolve.
+              <br/><br/>
+              From covert operations in the darkest reaches to rapid response in life-or-death scenarios, our commitment is absolute. Every assignment is met with meticulous planning, 
+              relentless execution, and a code of professionalism forged in the crucible of countless battles. Our operatives embody discipline, skill, and adaptability, 
+              ensuring that no barrier is insurmountable and no objective unreachable.
+              <br/><br/>
+              We exist to serve the few who demand unmatched excellence—resolute, efficient, and formidable—yet we remain humble in our duty, 
+              knowing that true strength lies in the mission, not the accolades. When the stakes are highest and the odds are against you, 
+              we are the force that stands ready, undeterred and unbroken, quietly shaping the balance of power within the Verse.
+            </p>
+          </div>
         </div>
         <div class="h-full shrink-0 aspect-square">
           <Image class="right object-cover h-full w-fit block" draggable="false" src={IMG_what_we_do} alt="What we do" />
         </div>
       </div>
-      <div class="h-[500px] flex backdrop-blur-xs">
+      <div class="h-[500px] mt-4 mb-4 flex">
         <div class="h-full shrink-0 aspect-square">
           <Image class="left object-cover h-full w-fit block" draggable="false" src={IMG_what_we_do_for_you} alt="What we do" />
         </div>
-        <div class="p-8">
-          <h1>Services we offer</h1>
-          <p>Our services are ever improving and adapting! We are law abiding however.</p>
-          <ul>
-            <li>Clandestine Demolitions</li>
-            <li>Clandestine Exfiltrations</li>
-            <li>Clandestine Raids</li>
-          </ul>
-          <p>Organisation leadership may contact us for more specific/complex jobs which may not be listed here. Discussion of job specifics will be done in-verse within a secretive location.</p>
+        <div class="p-8 overflow-hidden">
+          <h1 class="border-b-[1px] border-t-white mb-4">Services we offer</h1>
+          <div class="h-full overflow-y-auto">
+            <p>Our services are ever improving and adapting! We are law abiding however.</p>
+            <ul>
+              <li>Clandestine Demolitions</li>
+              <li>Clandestine Exfiltrations</li>
+              <li>Clandestine Raids</li>
+            </ul>
+            <p>Organisation leadership may contact us for more specific/complex jobs which may not be listed here. Discussion of job specifics will be done in-verse within a secretive location.</p>
+          </div>
         </div>
       </div>
-      <div class="h-[500px] flex backdrop-blur-xs">
-        <h1>Divisions</h1>
-
+      <div class="h-[500px] mt-4 mb-4 flex">
+        <div class="p-8">
+          <h1 class="border-b-[1px] border-t-white mb-4">Divisions</h1>
+        </div>
       </div>
-      <div class="h-[500px] flex backdrop-blur-xs">
-        <h1>Become one of us today!</h1>
+      <div class="h-[500px] mt-4 mb-4 flex">
+        <div class="p-8">
+          <h1 class="border-b-[1px] border-t-white mb-4">Become a Ghost today!</h1>
+        </div>
       </div>
-      <div class="h-[500px] flex backdrop-blur-xs">
-        <h1>Leadership</h1>
-
+      <div class="h-[500px] mt-4 mb-4 flex">
+        <div class="p-8">
+          <h1 class="border-b-[1px] border-t-white mb-4">Leadership</h1>
+        </div>
       </div>
-      <div class="h-[500px] flex backdrop-blur-xs">
-        <h1>Our Partners</h1>
+      <div class="h-[500px] mt-4 mb-4 flex">
+        <div class="p-8">
+          <h1 class="border-b-[1px] border-t-white mb-4">Our Partners</h1>
+        </div>
       </div>
     </div>
   </main>
@@ -109,6 +119,8 @@ import IMG_what_we_do_for_you from '@assets/images/home/what_we_do_for_you.png';
   }
 
   #content {
+    mask-image: linear-gradient(to bottom, transparent, black 32px);
+
     /*
     .panel-idea {
       background-color: rgba(0, 0, 0, 0.45);
@@ -117,11 +129,6 @@ import IMG_what_we_do_for_you from '@assets/images/home/what_we_do_for_you.png';
       clip-path: polygon(0% 25px, 25px 2px, 50% 2px, 100% 0%, 100% calc(100% - 25px), calc(100% - 25px) calc(100% - 2px), 50% calc(100% - 2px), 0% 100%);
     }
     */
-
-    & > :first-child {
-      @apply pt-8;
-      mask-image: linear-gradient(to bottom, transparent, black 32px);
-    }
 
     img {
       border-top: white 1px solid;
