@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+
+import IMG_logo from '@public/favicon.svg';
+import IMG_made_by_the_community from '@assets/images/made_by_the_community.png';
+
+const realYear = new Date().getFullYear();
+const starCitizenYearOffset = 930;  // adjust based on actual current Star Citizen year - real year
+const starCitizenYear = realYear + starCitizenYearOffset;
+---
+
+<footer class="pl-[10%] pr-[10%] pt-4 pb-8 flex flex-col backdrop-blur-xs border-t-[1px] border-t-white">
+  <div class="flex items-center">
+    <Image width={96} height={96} draggable="false" src={IMG_logo} alt="Footer logo" />
+    <h1 class="text-[32px] ml-8 h-fit">Bounty Hunters Ghosts</h1>
+  </div>
+  <div class="flex gap-8">
+    <div class="p-3">
+      <ul>
+        <li>
+          <a draggable="false">Disclaimer</a>
+        </li>
+        <li>
+          <a draggable="false">Privacy Policy</a>
+        </li>
+      </ul>
+    </div>
+    <div class="p-3">
+      <ul>
+        <li>
+          <a draggable="false">Brand Assets</a>
+        </li>
+        <li>
+          <a draggable="false">Wallpapers</a>
+        </li>
+      </ul>
+    </div>
+    <div class="p-3">
+      <ul>
+        <li>
+          <a draggable="false">Discord</a>
+        </li>
+        <li>
+          <a draggable="false">BlueSky</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex items-center mt-12">
+    <Image width={64} height={64} draggable="false" src={IMG_made_by_the_community} alt="Footer logo" />
+    <small class="ml-8">
+      © {starCitizenYear} Medrunner Services. Star Citizen®, Roberts Space Industries® and Cloud Imperium® are registered trademarks of Cloud Imperium Rights LLC. 
+      This project is a fansite and not affiliated with Cloud Imperium Games in any way.
+    </small>
+  </div>
+</footer>
+
+<style lang="scss">
+    footer {
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+</style>
